@@ -5,8 +5,8 @@ for strngs in filer:
     print(str(count) + " " +strngs)
 filer.close()
 
-# filew = open("/home/ishaan/Desktop/checkmeout.txt",'a')
-# for nums in range(10):
-#     filew.write(" adding line number {:10}\n".format(nums))
-# filew.close()
+filew = open("/home/ishaan/Desktop/checkmeout.txt",'a')
+for nums in range(10):
+    filew.write(" adding line number {:10}\n".format(nums))
+filew.close()
 

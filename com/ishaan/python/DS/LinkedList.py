@@ -35,7 +35,7 @@ class LinkedList:
 
 
 ll = LinkedList()
-ll.insert("K")
+ll.insert("A")
 ll.insert("B")
 ll.insert("C")
 ll.insert("D")
@@ -44,3 +44,6 @@ ll.insert("F")
 ll.insert("G")
 ll.insert("H")
 ll.printLL()
+print("Answer is " + ll.head.next.next.next.name)
+
+
