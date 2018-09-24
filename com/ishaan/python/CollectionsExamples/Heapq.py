@@ -16,6 +16,10 @@ for i in range(5):
     print("appending {}".format(n))
     heapq.heappush(myList,n)
 
+## following can be quite imporatant function of heap
+## this replaces smallest with new.
+heapq.heapreplace(myList,0)
+
 print("\n10th largest value in above is {}".format(heapq.nlargest(10,myList)))
 
 print("\n10th smallest value in above is {}".format(heapq.nsmallest(10,myList)))
