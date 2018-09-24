@@ -1,6 +1,7 @@
 from random import randint
 
-## Implementing Bubble sort. The simplest sorting algorithm.
+
+## Following program sort a list using selection sort
 
 def check_sorted(arr):
     temp = arr[0]
@@ -11,13 +12,16 @@ def check_sorted(arr):
     return True
 
 
-def bubble_sort(arr):
-    for i in range(len(arr), 0, -1):
-        for j in range(i - 1):
-            if arr[j] > arr[j + 1]:
-                temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min_position = i
+        for j in range(i, len(arr)):
+            if arr[j] < arr[min_position]:
+                min_position = j
+        if min_position != i:
+            temp = arr[i]
+            arr[i] = arr[min_position]
+            arr[min_position] = temp
 
 
 mylist = []
@@ -27,6 +31,6 @@ for i in range(20):
 
 print("The sorted flag is {} and list is \n{},".format(check_sorted(mylist), mylist))
 
-bubble_sort(mylist)
+selection_sort(mylist)
 
 print("The sorted flag is {} and list is \n{},".format(check_sorted(mylist), mylist))
