@@ -1,67 +1,42 @@
-class Vertex(object):
+from enum import Enum
+from collections import OrderedDict
 
-    def __init__(self,id):
-        self.id = id
-        self.connectedTo = {}
+class State(Enum):
+    unvisited = 1 #White
+    visited = 2 #Black
+    visiting = 3 #Gray
 
-    def addNeighbor(self,nbr,weight = 0):
-        self.connectedTo[nbr] = weight
+
+
+
+class Node:
+
+    def __init__(self, num):
+        self.num = num
+        self.visit_state = State.unvisited
+        self.adjacent = OrderedDict()  # key = node, val = weight
 
     def __str__(self):
-        return str(self.id) + '  connectedTo : ' + str([x.id for x in self.connectedTo])
+        return str(self.num)
 
-    def getConnections(self):
-            return self.connectedTo.keys()
-
-    def getID(self):
-        return self.id
-
-    def getWeight(self,nbr):
-        return self.connectedTo[nbr]
-
-
-class Graph(object):
+class Graph:
 
     def __init__(self):
-        self.vertexList = {}
-        self.numVertices = 0
+        self.nodes = OrderedDict()  # key = node id, val = node
 
-    def addVertext(self,id):
-        self.numVertices += 1
-        newVertex = Vertex(id)
-        self.vertexList[id] = newVertex
-        return  newVertex
+    def add_node(self, num):
+        node = Node(num)
+        self.nodes[num] = node
+        return node
 
-    def getVertex(self,n):
-        if n in self.vertexList:
-            return self.vertexList[n]
-        else:
-            return None
-
-    def getVertices(self):
-        return self.vertexList.keys()
-
-    def addEdge(self,f,t,w):
-        if f not in self.vertexList:
-            self.addVertext(f)
-        if t not in self.vertexList:
-            self.addVertext(t)
-        self.vertexList[f].addNeighbor(self.vertexList[t],w)
-
-    def __iter__(self):
-        return iter(self.vertexList.values())
-
+    def add_edge(self, source, dest, weight=0):
+        if source not in self.nodes:
+            self.add_node(source)
+        if dest not in self.nodes:
+            self.add_node(dest)
+        self.nodes[source].adjacent[self.nodes[dest]] = weight
 
 g = Graph()
-for i in range(1,11):
-    g.addVertext(i)
+g.add_edge(0, 1, 5)
 
-g.addEdge(1,2,0)
-g.addEdge(1,3,0)
-g.addEdge(3,4,0)
-g.addEdge(5,6,0)
-
-for vertex in g:
-    print(vertex)
-    print(vertex[x] for x in vertex.getConnections())
-    print("")
+print(g.nodes)
