@@ -5,6 +5,8 @@ graph = {'A': set(['B', 'C']),
          'E': set(['B', 'F']),
          'F': set(['C', 'E'])}
 
+
+## breadth first search to traverse all nodes
 def bfs(graph, start):
     visited, queue = set(), [start]
     while queue:
@@ -16,6 +18,7 @@ def bfs(graph, start):
 
 print(bfs(graph, 'A'))
 
+## BFS to get all possible routes.
 def bfs_paths(graph, start, goal):
     queue = [(start, [start])]
     while queue:
@@ -26,9 +29,11 @@ def bfs_paths(graph, start, goal):
             else:
                 queue.append((next, path + [next]))
 
-print(list(bfs_paths(graph, 'A', 'F')))
+print(list(bfs_paths(graph, 'A', 'E')))
 
 
+
+# BFS to get shortest route only ..
 def shortest_path(graph, start, goal):
     try:
         return next(bfs_paths(graph, start, goal))
