@@ -40,8 +40,27 @@ c = oct(100)
 print("bin , hex and oct for 100 is {} , {}  and {} ".format(a,b,c))
 
 
-dis("True for true and False for false")
+dis("True ( T capital)  for true and False (F capital) for false")
 
 if -9:
     print("-9 is True ")
+else:
+    print("-9 is False")
+
+if 0:
+    print("0 is True ")
+else:
+    print("0 is False")
+
+dis("Seq data type are str,bytes,bytearray,list,tuple,range. Can be Slice,dice and multiply")
+
+str = "Ishaan"
+str_rev = str[::-1]
+str_start = str[:len(str)//2]
+print("Reverse string is {} and first half is {}".format(str_rev,str_start))
+
+
+
+
+
 

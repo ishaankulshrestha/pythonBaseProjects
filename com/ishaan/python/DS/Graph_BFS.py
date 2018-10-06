@@ -6,7 +6,7 @@ graph = {'A': set(['B', 'C']),
          'F': set(['C', 'E'])}
 
 
-## breadth first search to traverse all nodes
+## breadth first search to traverse all nodes   
 def bfs(graph, start):
     visited, queue = set(), [start]
     while queue:
