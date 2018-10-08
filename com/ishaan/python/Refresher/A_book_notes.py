@@ -57,8 +57,30 @@ dis("Seq data type are str,bytes,bytearray,list,tuple,range. Can be Slice,dice a
 str = "Ishaan"
 str_rev = str[::-1]
 str_start = str[:len(str)//2]
-print("Reverse string is {} and first half is {}".format(str_rev,str_start))
+print("Reverse string is {} and first half is {} 4 times is {}".format(str_rev,str_start,str*4))
 
+dis("bytes and bytearrys .. check use below TODO")
+
+dis("List are like arrays except : a) they can store hetro data b) they can grow dynamically.")
+
+my_list = []
+
+inc =3
+for i in range(100,200,inc):
+    my_list.append(i)
+    inc += 1
+print(my_list)
+
+my_list.append(1)
+my_list.pop()
+my_list.remove(my_list[10])
+print(my_list.count(1))
+my_list.extend([1,2,3])
+my_list.reverse()
+print(my_list.pop(0))
+
+
+dis("tuple are like lists which can not be modified and they can have Duplicates.")
 
 
 
