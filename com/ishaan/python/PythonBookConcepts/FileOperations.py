@@ -1,5 +1,8 @@
 from random import randint
 f = open("/home/ishaan/Desktop/sample.txt","w")
+
+## in place of w it can be r, a , r+,a+ wb,rb,ab .. b for binary mode.
+
 for i in range(100):
     no_words = randint(10,20)
     curr_sen = ""
@@ -23,6 +26,7 @@ for line in f_read:
         count += 1
         print(count,end="  ")
         print(word)
+
 
 f_read.close()
 
