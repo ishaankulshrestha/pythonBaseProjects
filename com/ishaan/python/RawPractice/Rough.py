@@ -1,8 +1,9 @@
-l, b = (int(x) for x in input("Enter the length and breadth of rectangle seperated by comma \n").split(","))
-print("\n\n")
-for i in range(l):
-    if i == 0 or i == l - 1:
-        print('*' * b)
-        continue
-    print('*' + " " * (b - 2) + '*')
+def sample(x):
+    x[0] *= 2
+    print("In function x = {} ".format(x[0]))
 
+
+x = (4,)
+print("before call x = {}".format(x))
+sample(x)
+print("after call it is {}".format(x))
