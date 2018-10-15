@@ -6,6 +6,17 @@ class treeNode(object):
         self.right = None
         self.left = None
 
+def BST_insert_list(my_list,start,end):
+    if start > end or start >= len(my_list):
+        return
+    if start == end:
+        return treeNode(my_list[start])
+    root = treeNode(my_list[(start+end)//2])
+    root.left = BST_insert_list(my_list,start,(start+end)//2)
+    #print(" {} {} {}".format(start,(start+end)//2,end))
+    root.right = BST_insert_list(my_list,((start+end)//2)+1,end)
+    return root
+
 def BST_insert(root,value):
     new_node = treeNode(value)
     if root is None:
@@ -33,15 +44,29 @@ def inorder_tree(root):
 def level_order(root):
     if root is None:
         return
-    queue = [root]
+    queue = [[root,0,1]]
+    prev = 0
     while queue:
-        current_node = queue.pop(0)
-        print(current_node.data,end=" ")
-        if current_node.left:
-            queue.append(current_node.left)
-        if current_node.right:
-            queue.append(current_node.right)
+        [current_node,level,position] = queue.pop(0)
+        level = level + 1
+        if prev < level:
+            prev = level
+            print()
+            print(" "*position)
+            position = 1
+            spacing = 100
 
+        print("{}".format(current_node.data,position,level),end=" ")
+        spacing = 1
+        position += 1
+        if current_node.left:
+            queue.append([current_node.left,level,position])
+        position += 1
+        if current_node.right:
+            queue.append([current_node.right,level,position])
+
+
+## Main programme
 
 my_list = []
 
@@ -53,12 +78,12 @@ while True:
     if n not in my_list:
         my_list.append(n)
         counter += 1
-        if counter > 30:
+        if counter > 32:
             break
 
-#my_list.sort()
+my_list.sort()
 
-#print(my_list)
+print(my_list)
 
 
 my_tree = None
@@ -70,6 +95,15 @@ for ele in my_list:
 inorder_tree(my_tree)
 print()
 level_order(my_tree)
+
+my_tree2 = None
+
+my_tree2 = BST_insert_list(my_list,0,len(my_list))
+
+level_order(my_tree2)
+
+
+
 
 
 
