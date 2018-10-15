@@ -1,22 +1,26 @@
 from random import randint
 
+
+## Basic Structure of Tree Node
 class treeNode(object):
     def __init__(self,value):
         self.data = value
         self.right = None
         self.left = None
 
+## Inserting a sorted list in BST for balanced tree
 def BST_insert_list(my_list,start,end):
     if start > end or start >= len(my_list):
         return
     if start == end:
-        return treeNode(my_list[start])
+        return
     root = treeNode(my_list[(start+end)//2])
     root.left = BST_insert_list(my_list,start,(start+end)//2)
-    #print(" {} {} {}".format(start,(start+end)//2,end))
     root.right = BST_insert_list(my_list,((start+end)//2)+1,end)
     return root
 
+
+## Insertion in BST Random
 def BST_insert(root,value):
     new_node = treeNode(value)
     if root is None:
@@ -34,6 +38,8 @@ def BST_insert(root,value):
             BST_insert(root.right,value)
     return root
 
+
+## In order Traversal of BST should give sorted data
 def inorder_tree(root):
     if root is None:
         return
@@ -41,6 +47,8 @@ def inorder_tree(root):
     print(root.data,end=" ")
     inorder_tree(root.right)
 
+
+## Level order traversal for BST
 def level_order(root):
     if root is None:
         return
@@ -74,16 +82,16 @@ my_list = []
 counter = 0
 
 while True:
-    n = randint(1,100)
+    n = randint(1,63)
     if n not in my_list:
         my_list.append(n)
         counter += 1
-        if counter > 32:
+        if counter >= 63:
             break
 
 my_list.sort()
 
-print(my_list)
+#print(my_list)
 
 
 my_tree = None
@@ -94,14 +102,14 @@ for ele in my_list:
 
 inorder_tree(my_tree)
 print()
-level_order(my_tree)
+#level_order(my_tree)
 
 my_tree2 = None
 
 my_tree2 = BST_insert_list(my_list,0,len(my_list))
 
 level_order(my_tree2)
-
+level_order(my_tree)
 
 
 
