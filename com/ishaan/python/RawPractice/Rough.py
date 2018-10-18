@@ -1,9 +1,11 @@
-def sample(x):
-    x[0] *= 2
-    print("In function x = {} ".format(x[0]))
+a = 13
+b = 26
+
+print(" a = {} and b = {} ".format(a,b))
+
+a = a+b
+b = a-b
+a = a-b
 
 
-x = (4,)
-print("before call x = {}".format(x))
-sample(x)
-print("after call it is {}".format(x))
+print(" a = {} and b = {} ".format(a,b))
