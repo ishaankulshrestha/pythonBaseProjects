@@ -29,4 +29,6 @@ print("\nfollowing is the popped result from the heap so formed.")
 for i in range(len(myList)):
     print("{}".format(heapq.heappop(myList)), end= ", ")
 
+## is a function heapq.nlargest(n,mylist)
+
 
