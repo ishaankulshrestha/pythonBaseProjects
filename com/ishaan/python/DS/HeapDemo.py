@@ -108,8 +108,8 @@ while True:
 
 while my_list != [0]:
     print(heappop(my_list),end=" ")
-    heapprint(my_list)
-    _ = input()
+    #heapprint(my_list)
+    #_ = input()
 
 
 
