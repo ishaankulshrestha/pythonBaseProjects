@@ -15,6 +15,7 @@ for line in my_file:
                 if word in freq_words:
                     freq_words[word] = my_dict.get(word,0)
                 if min(my_dict.values()) < my_dict.get(word,0):
+                    pass
 
             freq_words.append((my_dict[word],))
 

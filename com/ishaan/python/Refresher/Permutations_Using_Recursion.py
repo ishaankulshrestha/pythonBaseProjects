@@ -13,4 +13,4 @@ class Curr:
             Curr.perm(names[:i] + names[i + 1:], names[i] + prefix)
 
 
-Curr.perm("PreetiKul","")
+Curr.perm("Preeti","")

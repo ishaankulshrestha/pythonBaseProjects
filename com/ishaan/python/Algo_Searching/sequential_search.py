@@ -1,6 +1,6 @@
 def search_postion(arr,key):
     for i in range(len(arr)):
-        if key == arr[i]:
+        if arr[i] == key:
             return i+1
     return 0
 
@@ -19,7 +19,7 @@ else:
 get_position = search_postion(mylist,y)
 
 if (get_position):
-    print("{} exists in the list at position".format(x,get_position))
+    print("{} exists in the list at position".format(y,get_position))
 else:
-    print("{} do not exists in the list".format(x))
+    print("{} do not exists in the list".format(y))
 

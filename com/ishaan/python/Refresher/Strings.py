@@ -1,6 +1,5 @@
 import math
-
-a = math.inf
+#a = math.INF
 print(a)
 
 print("Ishaan Kulshrestha"[1:-1:2])

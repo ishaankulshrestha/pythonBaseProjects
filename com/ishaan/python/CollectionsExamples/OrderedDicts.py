@@ -22,6 +22,7 @@ for i in range(1,31,1):
 for k,v in mydict.items():
     print(" for key {} value is {} ".format(k,v))
 
+
 for k,v in mydict1.items():
     print(" for key {} value is {} ".format(k,v))
 
