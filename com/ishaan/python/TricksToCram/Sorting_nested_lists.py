@@ -21,3 +21,7 @@ print("Sorted Values are as follows : ")
 
 for ele in my_list:
     print(ele)
+
+for ele in my_list:
+    print(ele)
+
