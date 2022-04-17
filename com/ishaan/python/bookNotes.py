@@ -308,3 +308,21 @@ heapq.heappush(my_list,ele)
 heapq.heappop(my_list)
 heapq.nlargest(n,my_list)
 heapq.nlargest(n,my_list)
+ 
+ 
+#  GENERATE all sub sequence USE following EXCELLENT:
+nums = [0,1,2]
+bit_holder = [[]]
+
+for i in nums:
+            bit_holder +=[x + [i] for x in bit_holder]
+
+print(bit_holder)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
