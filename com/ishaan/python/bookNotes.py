@@ -319,6 +319,13 @@ for i in nums:
 
 print(bit_holder)
  
+# enumerate in python 
+ 
+x = ('apple', 'banana', 'cherry')
+y = enumerate(x)
+
+print(list(y))
+[(0, 'apple'), (1, 'banana'), (2, 'cherry')]
  
  
  
